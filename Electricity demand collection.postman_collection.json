@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "4fa059e4-1178-45b3-b973-24ad97b6b641",
+		"name": "Electricity demand collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24722384"
+	},
+	"item": [
+		{
+			"name": "Daily demand 2019",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fft?item_id=1293&start_date=2019-01-01&end_date=2019-12-31&time_trunc=day",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fft"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "1293"
+						},
+						{
+							"key": "start_date",
+							"value": "2019-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2019-12-31"
+						},
+						{
+							"key": "time_trunc",
+							"value": "day"
+						}
+					]
+				},
+				"description": "If you’re using an API specification format, such as OpenAPI, you can [import a spec file](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-api-specifications) into Postman to automatically generate a collection. Once you have a collection, you can automatically generate web-viewable Postman documentation.\n\n### [OpenAPI examples](https://github.com/OAI/OpenAPI-Specification/tree/master/examples)\n- [petstore.yaml](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml)\n- [petstore.json](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.json)"
+			},
+			"response": []
+		},
+		{
+			"name": "Default values request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fft",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fft"
+					]
+				},
+				"description": "Use default values: \nitem_id = 1293\nstart_date = \"2018-09-02\"\nend_date= \"2018-10-06\"\ntime_trunc= \"hour\""
+			},
+			"response": []
+		},
+		{
+			"name": "Check status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "Common endpoint to check whether the basic request works"
+			},
+			"response": []
+		},
+		{
+			"name": "Visualisation real electricity demand with default parameters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualize_demand",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualize_demand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualisation daily demand applied FFT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/visualize_fft?time_trunc=day",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"visualize_fft"
+					],
+					"query": [
+						{
+							"key": "time_trunc",
+							"value": "day"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
